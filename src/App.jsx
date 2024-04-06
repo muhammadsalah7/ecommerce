@@ -1,13 +1,25 @@
 import Slider from "./components/Slider";
 import NavBar from "./components/NavBar";
 import ProductsList from "./components/ProductsList";
+import About from "./components/About";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
       <NavBar />
-      <Slider />
-      <ProductsList />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Slider />
+              <ProductsList />
+            </>
+          }
+        />
+        <Route path="about" element={<About />} />
+      </Routes>
     </div>
   );
 }
